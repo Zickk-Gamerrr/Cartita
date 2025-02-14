@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor Animada</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #87CEEB;
+        }
+        .stem {
+            width: 10px;
+            height: 150px;
+            background-color: green;
+            position: absolute;
+            bottom: 50px;
+            animation: sway 3s infinite alternate ease-in-out;
+        }
+        .petal {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .center {
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            position: absolute;
+            border-radius: 50%;
+            top: 15px;
+            left: 15px;
+        }
+        .flower {
+            position: relative;
+            top: -20px;
+            left: -20px;
+            animation: bloom 2s ease-in-out;
+        }
+        .petal:nth-child(1) { top: -30px; left: 0px; }
+        .petal:nth-child(2) { top: 0px; left: -30px; }
+        .petal:nth-child(3) { top: 0px; left: 30px; }
+        .petal:nth-child(4) { top: 30px; left: 0px; }
+
+        @keyframes bloom {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes sway {
+            from {
+                transform: rotate(-5deg);
+            }
+            to {
+                transform: rotate(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stem">
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+</body>
+</html>
